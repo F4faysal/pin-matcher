@@ -35,18 +35,33 @@ document.getElementById('calculator').addEventListener('click', function(event){
             const  digit = privaseNuber.split('');
             digit.pop();
             const remaintDigit = digit.join('')
-            console.log(remaintDigit)
+            fild.value = remaintDigit ;
         }
-
     }
     else{
-      
       const carrentNumber = privaseNuber + number; 
       fild.value = carrentNumber;
     }
-    
- 
+})
 
-    
-  
+document.getElementById('varify-pin').addEventListener('click', function(){
+    const displayPin = document.getElementById('form-control');
+    const cartentPin = displayPin.value;
+    const typeNumberFild = document.getElementById('cal-form-control');
+    const typeNumber = typeNumberFild.value;
+
+    const pinSuscessMessage =  document.getElementById('ipn-suscess');
+    const pinFaildMessage =  document.getElementById('pin-faild');
+    if (typeNumber===cartentPin){
+       
+        pinSuscessMessage.style.display = 'block';
+        pinFaildMessage.style.display = 'none';
+    }
+    else{
+        
+        pinFaildMessage.style.display = 'block';
+        pinSuscessMessage.style.display = 'none';
+
+    }
+
 })
